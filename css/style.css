@@ -1,0 +1,81 @@
+.cssLeft, .cssTableTdLeft td
+{
+   text-align : left;
+}
+
+.cssCenter, .cssTableTdCenter td
+{
+   text-align : center;
+}
+
+.cssRight, .cssTableTdRight td
+{
+   text-align : right;
+}
+
+.cssJustify, .cssTableTdJustify td
+{
+   text-align : justify;
+}
+
+html, body
+{
+   font-family : "Friz Quadrata Std", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+   font-family : "Mass Effect Game 123", fantasy;
+}
+
+a, a:hover, a:active, a:visited
+{
+   color             : 5098FF;
+   text-decoration   : none;
+}
+
+a:hover
+{
+   color             : #70B8FF;
+   text-decoration   : none;
+}
+
+.cssHomeRule
+{
+   background-color  : #FFFF00;
+}
+
+.cssTable, .cssTable th, .cssTable td
+{
+   border-collapse   : collapse;
+   border            : 1px #888888 solid;
+   font-family       : "Open Sans";
+   font-size         : 85%;
+}
+
+.cssTable th, .cssTable td
+{
+   padding           : .25em 1em;
+}
+
+.cssTable th
+{
+   color             : #FFFFFF;
+   background-color  : #000000;
+}
+
+.cssTable td.cssHomeRule
+{
+   background-color  : #FFFF00;
+}
+
+.cssTable th.cssHomeRule
+{
+   color  : #FFFF00;
+   background-color  : #000000;
+}
+
+.cssTableTdCenter td
+{
+   
+}

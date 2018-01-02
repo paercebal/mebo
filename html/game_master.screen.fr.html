@@ -1,0 +1,727 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Maître du Jeu: Ecran</title>
+<style>
+@import url("../css/style.css")
+</style>
+</head>
+<body>
+
+<h1>Maître du Jeu: Ecran</h1>
+
+<h2>Divers</h2>
+
+<p>
+   xxx
+</p>
+
+<ul>
+   <li>
+      <b>Attaque Arme-à-Feu:</b>
+      <ul>
+         <li>
+            Dextérité + Arme-à-Feu + Bonus/Malus (si portée Courte, Moyenne ou Longue).
+         </li>
+         <li class="cssHomeRule">
+            Dextérité + Arme-à-Feu + Bonus/Malus - Defense (si portée Corps-à-Corps ou Bout Portant).
+         </li>
+         <li class="cssHomeRule">
+            Note: Si la cible est en mêlée, choisir au hasard celle qui sera la cible.
+            Le tireur peut faire attention en appliquant un Malus: La cible est attaquée
+            avec ce malus, et les autres sont attaquées avec un malus double.
+         </li>
+      </ul>
+      <span class="cssHomeRule">Pour les armes à refroidissement (i.e. non Geth,
+      et pre-2185): Un échec critique signifie que l'arme est hors-service durant
+       N tours (N = Recharge de l'arme)</span>
+   </li>
+   <li>
+      <b>Attaque Corps à Corps:</b>
+      <ul>
+         <li>
+            Dextérité + Arme Blanche + Bonus/Malus - Defense (usage Arme Blanche).
+         </li>
+         <li>
+            Dextérité + Bagarre + Bonus/Malus - Defense (usage Poings).
+         </li>
+      </ul>
+   </li>
+   <li class="cssHomeRule">
+      <b>Attaque "Execution":</b> Avec une arme-à-feu, ou une lame, Bonus +5.
+   </li>
+   <li class="cssHomeRule">
+      <b>Attaque d'Opportunité:</b>
+      Une Attaque d'Opportunité peut arriver, avec les critères suivants:
+      <ul>
+         <li>
+            N'est provoquée que dans les situations suivantes:
+            <ul>
+               <li>
+                  Le sujet est attaqué avec une arme-a-feu qui n'est ni un
+                  Pistolet, ni un Pistolet Automatique.
+               </li>
+               <li>
+                  L'adversaire tente de fuire plus vite que la marche, et
+                  sans personne pour occuper le sujet.
+               </li>
+            </ul>
+         </li>
+         <li>
+            Une AdO ne peut être effectuée qu'avec une arme de mêlée
+         </li>
+         <li>
+            Une AdO a un Jet d'attaque divisé par 2
+         </li>
+         <li>
+            Une AdO ne peut être faite qu'une fois par Tour
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Bonus au dégâts (Armes Blanches):</b> <s>Force -3</s> <span class="cssHomeRule">Force -2</span>.
+   </li>
+   <li>
+      <b>Bonus d'Armure:</b> Facteur de l'Armure + Modificateur d'Armure de l'Arme. Ceci est retranché aux dégâts qui passent le bouclier.
+   </li>
+   <li>
+      <b>Camouflage Tactique:</b> Jet en opposition:
+      <ul>
+         <li>
+            Sujet Camouflé: Dextérité + Discrétion
+         </li>
+         <li>
+            Adversaire: Perception - Grade du Module de Camouflage du Sujet Camouflé
+         </li>
+      </ul>
+      Si le Sujet Camouflé se déplace, un Bonus est ajouté au Jet de Perception
+      de l'Adversaire. Si le Sujet Camouflé attaque en utilisant Tueur de
+      l'Ombre pour rester camouflé, le Bonus est de +5.<br />
+      Un fois le Sujet Camouflé détecté, on peut le viser avec un Malus de -3.<br />
+      Tenter de détecter un Sujet Camouflé rajoute un Bonus de +1 par Tour (Max:
+      Bonus de +3) à scruter la bonne zone.
+   </li>
+   <li>
+      <b>Coût pour changer d'Arme:</b>
+      <ul>
+         <li>
+            Dégainer une arme à 1 main (ceinture):  0 tour, mais malus au jet d'attaque de -2.
+         </li>
+         <li>
+            Dégainer une arme à 2 mains (dos): 1 tour.
+         </li>
+         <li>
+            Rengainer une arme: 1 tour.
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Défense:</b> Min(Dextérité, Astuce)</i>.
+   </li>
+   <li>
+      <b>Dégâts:</b>
+      <ul>
+         <li>
+            Affectent d'abord les boucliers.
+            <span class="cssHomeRule">Si, pour un Jet donné de dégât, des dégâts
+            subsistent après avoir détruit un bouclier, ils sont perdus.
+            Une attaque au corps-à-corps ou une attaque à l'arme-à-feu à bout
+            portant n'est pas affectée par le bouclier.</span>
+         </li>
+         <li>
+            Ensuite, s'il en reste, sont diminués par les armures.
+         </li>
+         <li>
+            Enfin, s'il en reste, affectent la Santé.
+         </li>
+      </ul>
+      <table>
+         <tr>
+            <td rowspan="2">
+               <table class="cssTable">
+                  <tr>
+                     <th colspan="4">Normal</th>
+                  </tr>
+                  <tr>
+                     <th>Type de Dégâts</th>
+                     <th>Quand?</th>
+                     <th>Jets (Normaux)</th>
+                     <th>Jets (Boucliers)</th>
+                  </tr>
+                  <tr>
+                     <th>... de base</th>
+                     <td>1 ou 2 succès</td>
+                     <td>Aléatoires</td>
+                     <td>Maximum</td>
+                  </tr>
+                  <tr>
+                     <th>... modifiés</th>
+                     <td>3 ou 4 succès</td>
+                     <td>½ Aléatoires/½ Maximum</td>
+                     <td>Maximum</td>
+                  </tr>
+                  <tr>
+                     <th>... maximum</th>
+                     <td>5+ succès</td>
+                     <td>Maximum</td>
+                     <td>Maximum</td>
+                  </tr>
+               </table>
+            </td>
+            <td>
+               <table class="cssTable">
+                  <tr>
+                     <th colspan="3">Auto</th>
+                  </tr>
+                  <tr>
+                     <th>Type de Dégâts</th>
+                     <th>Jets (Normaux)</th>
+                     <th>Jets (Boucliers)</th>
+                  </tr>
+                  <tr>
+                     <th>1 Jet par succès (*)</th>
+                     <td>Aléatoires</td>
+                     <td>Maximum</td>
+                  </tr>
+                  <tr>
+                     <td colspan="3">(*) Max: Bonus Auto de Courte Portée</td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table class="cssTable">
+                  <tr>
+                     <th colspan="3">Fusil à Pompe</th>
+                  </tr>
+                  <tr>
+                     <th>Valeur de Dégâts</th>
+                     <td>Selon la portée</td>
+                  </tr>
+                  <tr>
+                     <th>Calcul des Dégâts</th>
+                     <td>voir Dégât "Normal"</td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+   </li>
+   <li>
+      <b>Effet Biotique:</b> Jet = Attribut Biotique + Talent Biotique</i>.
+      <ul>
+         <li>
+            <b>Portée:</b> Résolution x 20m (chaque 20m supplémentaire enlève 1D au jet)
+         </li>
+         <li>
+            <b>Réserve d'Eezo:</b> Altération x 3 (recharge 1/heure de repos et repas)
+         </li>
+         <li>
+            <b>Potence:</b> Ceil((Altération + Intégration) / 3). Permet de charger un effet.
+         </li>
+         <li>
+            <b>Charge:</b> 1 Eezo par Tour (0: Même Tour, Initiative += 8; 1:
+            Même Tour, 2+: Tours suivants)<br />
+            Le nombre max d'Eezo investi est: (Masse + Vitalité) / 3. Au-delà,
+            il y a risque de Surcharge: Jet (Mass + Vitalité - Pts Eezo)
+            <ul>
+               <li class="cssHomeRule">
+                  Echec Critique: 2 Dégâts Aggravés par Pts d'Eezo, puis Coma ou mort (à
+                  la discrétion du Conteur).
+               </li>
+               <li>
+                  Echec: 2 Dégâts Aggravés par Pts d'Eezo, puis Inconscience (durée
+                  et gravité au choix du Conteur).
+               </li>
+               <li>
+                  Succès: Désagréments physiques (Saignements, trouble de la
+                  vision, étourdissement, forte fatigue, etc., à la discrétion
+                  du Conteur)
+               </li>
+               <li>
+                  Succès Exceptionnel: Aucun désagrément.
+               </li>
+            </ul>
+            Les types de Charge sont:
+            <ul>
+               <li>
+                  <b>Charge de Puissance:</b> Jet += Bonus de N x Pts d'Eezo investis (où N == Potence)
+               </li>
+               <li>
+                  <b>Charge de Durée:</b> Durée = (N x Pts d'Eezo investis) Tours (où N == Potence)
+               </li>
+               <li>
+                  <b>Charge Maximum:</b> (Masse + Vitalité) / 3.
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Echec Critique:</b> un échec critique arrive si:
+      <ul>
+         <li>
+            Pas de dés dans le Jet, lancement Dé de Chance, et résulat 1.
+         </li>
+         <li class="cssHomeRule">
+            ou si Zéro succès au jet et au moins 1/4 des dés du jet sont des 1.
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Embuscade Réussie:</b> Victime tire Astuce + Sang-Froid.
+      <table class="cssTable">
+         <tr>
+            <th>Résultat</th>
+            <th>Malus Initiative</th>
+            <th>Tours perdus</th>
+            <th>Effet durant les Tours perdus</th>
+         </tr>
+         <tr>
+            <th class="cssHomeRule">Echec Critique</th>
+            <td class="cssHomeRule">-5</td>
+            <td class="cssHomeRule">2</td>
+            <td class="cssHomeRule">Pas d'action, ni de Défense</td>
+         </tr>
+         <tr>
+            <th>Echec</th>
+            <td>-3</td>
+            <td>1</td>
+            <td>Pas d'action, ni de Défense</td>
+         </tr>
+         <tr>
+            <th>Réussite</th>
+            <td>-3</td>
+            <td>1</td>
+            <td>Défense -= 1</td>
+         </tr>
+         <tr>
+            <th>Réussite Critique</th>
+            <td>0</td>
+            <td>0</td>
+            <td>-</td>
+         </tr>
+      </table>
+   </li>
+   <li>
+      <b>Initiative (Jet):</b> d10 + <i>Initiative (Score)</i>.
+   </li>
+   <li>
+      <b>Initiative (Score):</b> Dextérité + Sans-Froid <span class="cssHomeRule">Bonus de Masse</span>.
+      <div class="cssHomeRule">
+         La Masse a un effet sur l'Initiative.
+         <table class="cssTable">
+            <tr>
+               <th>Masse</th>
+               <th>Bonus/Malus Initiative</th>
+            </tr>
+            <tr>
+               <th>1</th>
+               <td>+3</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>+2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>+1</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>+0</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>(+1)</th>
+               <td>(-1)</td>
+            </tr>
+         </table>
+      </div>
+   </li>
+   <li>
+      <b>Lancé:</b> Dextérité + Athlétisme
+   </li>
+   <li>
+      <b>Perception:</b> Astuce + Sang-Froid
+   </li>
+   <li>
+      <b>Piratage:</b> Jet Intelligence + Craqueur (Omnitech) + Piratage - Protocole de la cible.<br />
+      C'est un Jet Etendu, et il faut atteindre l'Intégrité de la cible.
+      <div class="cssHomeRule">
+         Le Jet est soumis à une Dégradation égale à la Détection de la cible (IV)
+         <ul>
+            <li>
+               <b>IV:</b> La Dégradation s'arrête une fois le groupement de dés
+               divisé par deux (Une IV ne peut réellement s'adapter).
+            </li>
+            <li>
+               <b>IA:</b> La Dégradation ne s'arrête pas (Une IA va s'adapter à
+               la tentative d'intrusion et l'isoler)
+            </li>
+         </ul>
+      </div>
+      Le résultat de chaque Jet:
+      <ul>
+         <li class="cssHomeRule">
+            <b>Echec Critique:</b> La tentative est détectée automatiquement.
+            Le nombre de succès total est remis à zéro.
+         </li>
+         <li>
+            <b>Echec:</b> La cible peut tenter un Jet de Détection.
+         </li>
+         <li>
+            <b>Succès:</b> Le nombre de succès du Jet est ajouté au nombre de
+            succès total.
+         </li>
+         <li class="cssHomeRule">
+            <b>Succès Exceptionnel:</b> Le nombre de succès du Jet est ajouté
+            au nombre de succès total. Pour une IV, une Détection pourrait être
+            annulée (l'IV pense qu'il s'agit d'un faux positif).
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Santé:</b> Masse + Vitalité + 2 (Krogan: en plus, Vitalité Krogane: Vitalité x 2)
+   </li>
+   <li>
+      <b>Vitesse:</b> Dextérité + Force. (Dextérité + Force – 2 pour les krogans).
+      <table class="cssTable">
+         <tr>
+            <th>Type</th>
+            <th>Vitess Max (m)/Tour</th>
+            <th>Effect sur les Actions du sujet</th>
+            <th>Malus pour viser le sujet</th>
+            <th>Bonus au Jet pour détecter le sujet Camouflé Tactiquement</th>
+         </tr>
+         <tr>
+            <th>Marche</th>
+            <td>Vitesse (Score)/3</td>
+            <td>Aucun</td>
+            <td>-1</td>
+            <td>+2</td>
+         </tr>
+         <tr>
+            <th>Footing</th>
+            <td>Vitesse (Score)/2</td>
+            <td>Malus de 2</td>
+            <td>Vitesse (Score)/4</td>
+            <td>+2</td>
+         </tr>
+         <tr>
+            <th>Course</th>
+            <td>Vitesse (Score)</td>
+            <td>Malus de 4</td>
+            <td>Vitesse (Score)/3</td>
+            <td>+4</td>
+         </tr>
+         <tr>
+            <th>Sprint</th>
+            <td>Vitesse (Score)x2</td>
+            <td>Malus de 6</td>
+            <td>Vitesse (Score)/2</td>
+            <td>+4</td>
+         </tr>
+      </table>
+   </li>
+   <li>
+      <b>Volonté:</b> Résolution + Sang-Froid
+   </li>
+   <li>
+      <b>xxx:</b> xxx
+   </li>
+   <li>
+      <b>xxx:</b> xxx
+   </li>
+   <li class="cssHomeRule">
+      <b>Action Longue:</b> Une action qui prend plus d'un tour pour être
+      exécutée.
+   </li>
+</ul>
+
+<h2>Résolution des Actions</h2>
+
+<p>
+   xxx
+</p>
+
+<h3>Actions</h2>
+
+<ul>
+   <li>
+      <b>Tour:</b> 2 secondes. Permet de faire:
+      <ul>
+         <li>
+            Une Action Instantanée + Un mouvement (dont la vitesse va affecter l'Action)
+         </li>
+         <li>
+            Autant d'Actions Reflexes que raisonable.
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Action Instantanée:</b> Une action, généralement associée à un jet.
+   </li>
+   <li>
+      <b>Action Reflexe:</b> Une action qui demande un temps et un effort
+      négligeables.
+   </li>
+   <li class="cssHomeRule">
+      <b>Action Longue:</b> Une action qui prend plus d'un tour pour être
+      exécutée.
+   </li>
+   <li>
+      <b>xxx:</b> xxx
+   </li>
+</ul>
+
+<h3>Jets</h2>
+
+<ul>
+   <li>
+      <b>Jet Simple:</b> Jet d'un groupement de dés, avec malus/bonus.
+   </li>
+   <li>
+      <b>Jet en Opposition:</b> Jet d'un groupement de dés, avec bonus/malus,
+      contre un autre groupement de dés, avec bonus/malus.
+   </li>
+   <li>
+      <b>Jet Etendu:</b> Une Action Longue, où l'on ajoute les résultats de jets
+      successifs, jusqu'à ce que le temps imparti soit écoulé, que le nombre de
+      succès soit atteint, etc..
+   </li>
+   <li class="cssHomeRule">
+      <b>Jet Etendu en Opposition:</b> Combinaison d'un Jet en Opposition et
+      d'un Jet Etendu, jusqu'à ce que le temps imparti soit écoulé, qu'il y ait
+      une différence spécifique entre les totaux des succès, etc..
+   </li>
+   <li class="cssHomeRule">
+      <b>Dégradation:</b> Lors d'un Jet en Opposition (étendu ou non), un
+      facteur de dégradation peut intervenir: Chaque jet supplémentaire se voit
+      alors cummulativement tronqué d'un nombre de dés égal à ce facteur de
+      dégradation.
+   </li>
+   <li>
+      <b>xxx:</b> xxx
+   </li>
+</ul>
+
+<h2>Usage de la Volonté</h2>
+
+<p>
+   
+</p>
+
+<ul>
+   <li>
+      <b>Résister à <i>Sonné</i> en cas de dégâts massifs:</b> 1 point de
+      Volonté réduit la durée de <i>Sonné</i> à 1 round.
+   </li>
+</ul>
+
+
+
+<h2>Santé &amp; Blessures</h2>
+
+<p>
+</p>
+
+<ul>
+   <li>
+      <b>Blessure Légère:</b> Hématomes, écorchures. Doivent se soigner
+      naturellement.
+   </li>
+   <li>
+      <b>Blessure Aggravées:</b> Blessures portant atteinte aux organes
+      internes, aux os, aux muscles de manière profonde. Ne peut être soignées
+      efficacement que par chirurgie (ou partiellement, par Medigel).
+   </li>
+</ul>
+
+<h2>Soigner les Blessures</h2>
+
+<p>
+   Quel que soit le moyen, soigner une Blessure Aggravée la transforme en
+   Blessure Légère.
+</p>
+
+<table class="cssTable">
+   <tr>
+      <th colspan="4">Blessure Légère</th>
+   </tr>
+   <tr>
+      <th colspan="2">Soin Naturel</th>
+      <td colspan="2">1/Jour, Jet Vitalité. Succès => 1 Blessure Légère soignée.</td>
+   </tr>
+   <tr>
+      <th colspan="4">Blessure Aggravée</th>
+   </tr>
+   <tr>
+      <th rowspan="2">Premiers soins</th>
+      <th>Médigel</th>
+      <td>1 Blessure Aggravée/Dose (Max: 2 Blessures Aggravées soignées par combat).</td>
+      <td rowspan="2">Max: N Blessures Aggravée soignées après un combat, N étant la Vitalité).</td>
+   </tr>
+   <tr>
+      <th>Médecine</th>
+      <td>Intelligence + Médecine, chaque succès => 1 Blessure Aggravée.</td>
+   </tr>
+   <tr>
+      <th colspan="2">Chirurgie</th>
+      <td colspan="2">1/Jour: Intelligence + Médecine, chaque succès => 1 Blessure Aggravée.</td>
+   </tr>
+</table>
+
+
+
+<h2>Etats</h2>
+
+<p>
+</p>
+
+<ul>
+   <li>
+      <b>Sonné:</b> Malus de 6 à toutes les actions. Déplacement limité à la
+      marche. Défense réduite de 2. A la fin de la durée, le malus décroît de 2
+      par tours.
+   </li>
+   <li>
+      <b>Inconscient:</b> Tout les 3 tours, jet de Vitalité avec malus égal aux
+      blessures aggravées (si le jet est 0 ou moins, pas de jet de chance).
+      Ce jet a un bonus de 1 à chaque tentative. Un succès implique un réveil
+      dans un état <i>Sonné</i> pour autant de tour de blessures aggravées.
+   </li>
+</ul>
+
+<h2>Perte de conscience</h2>
+
+<p>
+   Si, en une seule attaque, les dégâts sont supérieur ou égaux à la vitalité
+   de la victime, alors Jet de Vitalité:
+</p>
+
+<ul>
+   <li>
+      <b>Dégâts Légers:</b> En cas d'échec, sonné pour 1 tour.
+   </li>
+   <li>
+      <b>Dégâts aggravés:</b> En cas de réussite, sonné pour N tours (N = nombre
+      de dégâts) ou 1 tour si point de volonté utilisé. En cas d'échec, le
+      personnage tombe inconscient.
+   </li>
+</ul>
+
+<ul>
+   <li>
+      <b>Jet Etendu en Opposition:</b> Combinaison d'un Jet en Opposition et
+      d'un Jet Etendu, jusqu'à ce que le temps imparti soit écoulé, qu'il y ait
+      une différence spécifique entre les totaux des succès, etc..
+   </li>
+   <li class="cssHomeRule">
+      <b>Dégradation:</b> Lors d'un Jet en Opposition (étendu ou non), un
+      facteur de dégradation peut intervenir: Chaque jet supplémentaire se voit
+      alors cummulativement tronqué d'un nombre de dés égal à ce facteur de
+      dégradation.
+   </li>
+   <li class="cssHomeRule">
+      <b>Amélioration:</b> L'opposé de Dégradation. Utilisé, par exemple, pour
+      sortir de l'<i>Inconscience</i>.
+   </li>
+   <li>
+      <b>xxx:</b> xxx
+   </li>
+</ul>
+
+
+<h2>Combat</h2>
+
+<p>
+   <b>Mouvement:</b> En un tour, on peut faire 1 Action Instantanée + 1
+   mouvement (Vitesse) ou 2 mouvements.
+</p>
+<p class="cssHomeRule">
+   <b>Incapable de se défendre:</b> La règle officielle dit que la Défense tombe
+   à zéro. La règle maison dit que la Défense -= 3. Le but est d'éviter que
+   ceux avec une Défense de zéro se moquent d'accomplire des actions qui font
+   tomber la défense à zéro.
+</p>
+
+
+<h3>Armes à Feu</h3>
+
+<ul>
+   <li>
+      <b>Jet:</b> Dextérité + Arme-à-Feu.<br />
+      Les Bonus/Malus peuvent être:
+   </li>
+   <ul>
+      <li>
+         <b>Malus de Portée:</b> 0/-2/-4.
+      </li>
+      <li>
+         <b>Visée:</b> chaque Tour de visée ajoute Bonus de 1 au jet (Max: Bonus 3).
+      </li>
+      <li>
+         <b>Auto:</b> Le Malus "Auto" s'ajoute au jet d'attaque (en plus de la portée).<br />
+         Permet d'attaquer plusieurs cibles avec un jet par cible, malus global de
+         2 x (Nbre de Cibles - 1) à tous les jet.
+      </li>
+      <li>
+         <b>Sniper:</b> Sans visée, le tir a un Malus de 4. Chaque tour passé à
+         viser diminue ce Malus de 2. Une fois le malus à 0, utiliser la règle
+         <i>Visée</i> ci-dessus.
+      </li>
+      <li>
+         <b>Couverture:</b> Impose un Malus au  jet d'attaque (-1: Moitié du corps
+         est à couvert, -5: Un bras ou une tête dépasse).
+      </li>
+   </ul>
+</ul>
+
+
+<h3>Corps-à-Corps</h3>
+
+<ul>
+   <li>
+      <b>Jet:</b> Dextérité + Arme Blanche + Bonus/Malus ou Dextérité + Bagarre + Bonus/Malus.<br />
+      Les Bonus/Malus peuvent être:
+   </li>
+   <ul>
+      <li>
+         <b>Esquive:</b> Défense *= 2 (Pas d'attaque).
+      </li>
+      <li>
+         <b>Parade:</b> Défense += <i>Arme Blanche</i>
+         <span class="cssHomeRule">(ou <i>Bagarre</i> si des bracelets de
+         défense sont utilisés)</span>.
+      </li>
+      <li>
+         <b>Attaque Totale:</b> L'attaque a un Bonus égal à la Défense.
+         Mais du coup, La Défense tombe à zéro.
+      </li>
+      <li>
+         <b>Attaques Multiples:</b> Un sujet attaqué en corps-à-corps par de
+         multiples adversaires voit sa défense diminuée de 1 à chaque attaque
+         après la première attaque, jusqu'à tomber à zéro.
+      </li>
+   </ul>
+</ul>
+
+
+<h2>XXX</h2>
+
+<ul>
+   <li>
+      <b>XXX</b> xxx
+   </li>
+</ul>
+
+
+
+
+</body>
+</html>
