@@ -1,0 +1,33 @@
+Mebo is a project containing three kind of data, each with their own type of license:
+- data owned by Bioware/Electronic Arts
+- data owned by Renaud Lottiaux
+- data in addition to the data above. This last kind of data is protected by
+the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License, which
+can be found at the following URL: http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+ABOUT THE USE OF MASS EFFECT INFORMATION/ART
+
+Mass Effect is probably copyrighted/trademarked by BioWare/Electronic Arts.
+This program does not intend to challenge the copyright/trademark, or infringe
+on it.
+
+To be clear: Everything "Mass Effect", implicitly or explicitly, is owned by
+BioWare/Electronic Arts.
+
+Some of the traits reproduce or are inspired by traits from the Mass Effect
+games, and sometimes extend them. Again, this is not intended as a challenge or
+infringement.
+
+This is a fan creation, free of charge, usable by anyone willing to enjoy the
+Mass Effect universe beyond the video games.
+
+
+ABOUT THE USE OF MASS EFFECT: NOUVELLE ERE INFORMATION
+
+Everything written about for MASS EFFECT also applies to MASS EFFECT: NOUVELLE
+ERE, authored by Renaud Lottiaux.
+
+Mebo takes inspiration from MASS EFFECT: NOUVELLE ERE, adjust/modify some, etc.
+
+To learn more about this awesome project: http://masseffectne.blogspot.fr/p/univers.html
