@@ -26,7 +26,68 @@ html, body
 h1, h2, h3, h4, h5, h6
 {
    font-family : "Mass Effect Game 123", fantasy;
+   font-weight : normal;
 }
+
+h1 b, h2 b, h3 b, h4 b, h5 b, h6 b
+{
+   font-weight : bold;
+}
+
+h1.cssSubtitle
+{
+   font-size : 100%;
+}
+
+
+
+/* Header counters */
+
+h1 { counter-reset: h2counter; }
+h2 { counter-reset: h3counter; }
+h3 { counter-reset: h4counter; }
+h4 { counter-reset: h5counter; }
+h5 { counter-reset: h6counter; }
+
+h2:before
+{
+   content: counter(h2counter) "\0000a0\002014\0000a0";
+   counter-increment: h2counter;
+   counter-reset: h3counter;
+}
+
+h3:before
+{
+   content: counter(h2counter) "." counter(h3counter) "\0000a0\002014\0000a0";
+   counter-increment: h3counter;
+   counter-reset: h4counter;
+}
+
+h4:before
+{
+   content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "\0000a0\002014\0000a0";
+   counter-increment: h4counter;
+   counter-reset: h5counter;
+}
+
+h5:before
+{
+   content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "\0000a0\002014\0000a0";
+   counter-increment: h5counter;
+   counter-reset: h6counter;
+}
+
+h6:before
+{
+   content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) "\0000a0\002014\0000a0";
+   counter-increment: h6counter;
+}
+
+
+
+
+
+
 
 a, a:hover, a:active, a:visited
 {
