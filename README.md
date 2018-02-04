@@ -8,7 +8,7 @@ organization/layout.
 Also, MIT License, unless already copyrighted/trademarked/owned by Bioware,
 Electronic Arts, White Wolf or Renaud Lottiaux.
 
-Current version is developped in French. It will be translated to English at a later date
+Current version is developed in French. It will be translated to English at a later date
 
 # Français
 
@@ -22,8 +22,8 @@ les règles et le background présentés dans le jeu de rôles de Renaud Lottiau
 
 Le but principal est de servir de base pour une chronique Mass Effect se
 déroulant en même temps que les jeux vidéos (Mass Effect 1, 2 et 3), dans une
-version alternative où le Commandant Shepard meurt peu après Nihlus, sur Eden
-Prime. Les personnages-joueurs doivent alors prendre la relève...
+version alternative où les personnages-joueurs rejoindrons l'escouade du
+Commandant Shepard pour sauver la galaxie...
 
 Si vous avez sur votre système d'exploitation les polices: "Friz Quadrata Std" et
 "Mass Effect Game 123", alors ME:BO ressemblera plus au supplément de
