@@ -101,6 +101,20 @@ a:hover
    text-decoration   : none;
 }
 
+blockquote
+{
+   font-style        : italic;
+   margin            : 1em 3em;
+}
+
+blockquote i
+{
+   font-style        : normal;
+}
+
+
+
+
 .cssHomeRule
 {
    background-color  : #FFFF00;
@@ -139,4 +153,14 @@ a:hover
 .cssTableTdCenter td
 {
    
+}
+
+.cssGradualBlink
+{
+  animation: gradualBlinker 1s linear infinite;
+}
+
+@keyframes gradualBlinker
+{  
+  50% { opacity: 0; }
 }
