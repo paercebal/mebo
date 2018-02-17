@@ -27,6 +27,18 @@ h1, h2, h3, h4, h5, h6
 {
    font-family : "Mass Effect Game 123", fantasy;
    font-weight : normal;
+   margin-top  : 1.5em;
+}
+
+h1
+{
+   text-align  : center;
+   margin-bottom  : 2em;
+}
+
+h1 + h1
+{
+   margin-top  : 0em;
 }
 
 h1 b, h2 b, h3 b, h4 b, h5 b, h6 b
@@ -36,7 +48,9 @@ h1 b, h2 b, h3 b, h4 b, h5 b, h6 b
 
 h1.cssSubtitle
 {
-   font-size : 100%;
+   color          : #444444;
+   font-size      : 100%;
+   margin-bottom  : 0em;
 }
 
 
@@ -103,6 +117,7 @@ a:hover
 
 blockquote
 {
+   color             : #555555;
    font-style        : italic;
    margin            : 1em 3em;
 }
@@ -112,9 +127,28 @@ blockquote i
    font-style        : normal;
 }
 
+p, ul, ol
+{
+   margin            : .75em 2em;
+}
 
+div.cssWarning
+{
+   margin            : .75em 2em;
+   border            : 1px solid #FF0000;
+}
 
+div.cssWarning p:first-child:before
+{
+   color             : #FF0000;
+   font-weight       : bold;
+   content           : "Attention: ";
+}
 
+.cssWarning
+{
+   
+}
 .cssHomeRule
 {
    background-color  : #FFFF00;
@@ -163,4 +197,10 @@ blockquote i
 @keyframes gradualBlinker
 {  
   50% { opacity: 0; }
+}
+
+.cssTodo
+{
+   color             : #880000 ;
+   background-color  : #FFFF00 ;
 }

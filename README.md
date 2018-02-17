@@ -12,9 +12,11 @@ Current version is developed in French. It will be translated to English at a la
 
 # Français
 
-_Note: Pour commencer, il suffit de télécharger le fichier .ZIP, le dézipper quelque
-part, et ouvrir le `index.html` a la racine (ou éventuellement le fichier
-`index.fr.html` dans le répertoire `html`) dans un navigateur._
+_Note: Pour commencer, il suffit de télécharger le fichier .ZIP (sur Github,
+le bouton vert "Clone or download", qui ouvre un menu avec l'entrée "Download
+ZIP"), le dézipper quelque part, et ouvrir le `index.html` a la racine (ou
+éventuellement le fichier `index.fr.html` dans le répertoire `html`) dans un
+navigateur._
 
 **Mass Effect: Black Ops** (ME:BO) est un supplément HTML complétant et personnalisant
 les règles et le background présentés dans le jeu de rôles de Renaud Lottiaux,
@@ -25,6 +27,6 @@ déroulant en même temps que les jeux vidéos (Mass Effect 1, 2 et 3), dans une
 version alternative où les personnages-joueurs rejoindrons l'escouade du
 Commandant Shepard pour sauver la galaxie...
 
-Si vous avez sur votre système d'exploitation les polices: "Friz Quadrata Std" et
-"Mass Effect Game 123", alors ME:BO ressemblera plus au supplément de
-Renaud Lottiaux.
+Si vous avez sur votre système d'exploitation les polices: `Friz Quadrata Std` et
+`Mass Effect Game 123`, alors l'apparence de ME:BO sera plus proche visuellement
+du supplément de Renaud Lottiaux.
