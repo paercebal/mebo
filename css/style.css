@@ -97,6 +97,40 @@ h6:before
    counter-increment: h6counter;
 }
 
+h2.cssNoNumber:before
+{
+   content: "";
+   counter-increment: h2counter;
+   counter-reset: h3counter;
+}
+
+h3.cssNoNumber:before
+{
+   content: "";
+   counter-increment: h3counter;
+   counter-reset: h4counter;
+}
+
+h4.cssNoNumber:before
+{
+   content: "";
+   counter-increment: h4counter;
+   counter-reset: h5counter;
+}
+
+h5.cssNoNumber:before
+{
+   content: "";
+   counter-increment: h5counter;
+   counter-reset: h6counter;
+}
+
+h6.cssNoNumber:before
+{
+   content: "";
+   counter-increment: h6counter;
+}
+
 
 
 
@@ -132,10 +166,22 @@ p, ul, ol
    margin            : .75em 2em;
 }
 
-div.cssWarning
+div.cssWarning, div.cssInformation
 {
    margin            : .75em 2em;
-   border            : 1px solid #FF0000;
+   border            : 1px solid #000000;
+}
+
+div.cssWarning
+{
+   border-color      : #FF0000;
+   background        : #FFDDDD;
+}
+
+div.cssInformation
+{
+   border-color      : #008800;
+   background        : #DDFFDD;
 }
 
 div.cssWarning p:first-child:before
@@ -145,13 +191,22 @@ div.cssWarning p:first-child:before
    content           : "Attention: ";
 }
 
-.cssWarning
+div.cssInformation p:first-child:before
 {
-   
+   color             : #008800;
+   font-weight       : bold;
+   content           : "Information: ";
 }
+
 .cssHomeRule
 {
    background-color  : #FFFF00;
+}
+
+.cssTodo
+{
+   color             : #FF0000;
+   background-color  : #FFDDDD;
 }
 
 .cssTable, .cssTable th, .cssTable td
