@@ -166,7 +166,7 @@ p, ul, ol
    margin            : .75em 2em;
 }
 
-div.cssWarning, div.cssInformation
+div.cssWarning, div.cssInformation, div.cssDescription, div.cssBrainstorming
 {
    margin            : .75em 2em;
    border            : 1px solid #000000;
@@ -184,6 +184,18 @@ div.cssInformation
    background        : #DDFFDD;
 }
 
+div.cssDescription
+{
+   border-color      : #0066AA;
+   background        : #CCEEFF;
+}
+
+div.cssBrainstorming
+{
+   border-color      : #AA6600;
+   background        : #FFEECC;
+}
+
 div.cssWarning p:first-child:before
 {
    color             : #FF0000;
@@ -196,6 +208,20 @@ div.cssInformation p:first-child:before
    color             : #008800;
    font-weight       : bold;
    content           : "Information: ";
+}
+
+div.cssDescription p:first-child:before
+{
+   color             : #0066AA;
+   font-weight       : bold;
+   content           : "Description: ";
+}
+
+div.cssBrainstorming p:first-child:before
+{
+   color             : #AA6600;
+   font-weight       : bold;
+   content           : "Brainstorming: ";
 }
 
 .cssHomeRule
