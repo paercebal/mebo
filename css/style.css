@@ -293,3 +293,10 @@ div.cssBrainstorming p:first-child:before, div.cssBrainstorming h1:first-child:b
    color             : #880000 ;
    background-color  : #FFFF00 ;
 }
+
+div.cssAudio
+{
+   margin               : 2px;
+   border               : 2px #AAAAFF outset;
+   background-color     : #AAAAFF;
+}
