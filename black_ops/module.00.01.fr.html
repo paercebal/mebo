@@ -5,57 +5,9 @@
 <style>
 @import url("../css/style.css")
 </style>
-<style>
-div.cssAudio
-{
-   margin               : 2px;
-   border               : 2px #AAAAFF outset;
-   background-color     : #AAAAFF;
-}
-</style>
-<script>
-function completeAudio()
-{
-   var aa = document.getElementsByTagName("audio");
-   //alert("aa:" + aa.length);
-   var a, s, n, e, i, j;
-   for (i = 0; i < aa.length; ++i)
-   {
-      a = aa[i];
-      //alert("a:" + a.childNodes.length);
-      for (j = 0; j < a.childNodes.length; ++j)
-      {
-         s = a.childNodes[j];
-         //alert("s:" + s.tagName +"\ns:" + (s.tagName + "").toLowerCase());
-         if((s.tagName + "").toLowerCase() == "source")
-         {
-            n = s.getAttribute("src");
-            e = document.createElement("div");
-            e.setAttribute("class", "cssAudio");
-            e.setAttribute("align", "center");
-            e.innerHTML = "<div>" + n.replace(/^..\/music/, "") + " <button onclick=\"stopAllAudio()\">Stop All</button></div>";
-            a.parentNode.insertBefore(e, a);
-            e.appendChild(a);
-         }
-      }
-   }
-}
-
-function stopAllAudio()
-{
-   var aa = document.getElementsByTagName("audio");
-   //alert("aa:" + aa.length);
-   var a, s, n, e, i, j;
-   for (i = 0; i < aa.length; ++i)
-   {
-      a = aa[i];
-      a.pause();
-      a.currentTime = 0;
-   }
-}
-</script>
+<script src="../js/mebo.js"></script>
 </head>
-<body onload="completeAudio()">
+<body>
 
 <h1 class="cssSubtitle">Mass Effect: Black Ops</h1>
 <h1>Module 00.01 - Akuze</h1>
