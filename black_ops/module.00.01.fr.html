@@ -5,8 +5,57 @@
 <style>
 @import url("../css/style.css")
 </style>
+<style>
+div.cssAudio
+{
+   margin               : 2px;
+   border               : 2px #AAAAFF outset;
+   background-color     : #AAAAFF;
+}
+</style>
+<script>
+function completeAudio()
+{
+   var aa = document.getElementsByTagName("audio");
+   //alert("aa:" + aa.length);
+   var a, s, n, e, i, j;
+   for (i = 0; i < aa.length; ++i)
+   {
+      a = aa[i];
+      //alert("a:" + a.childNodes.length);
+      for (j = 0; j < a.childNodes.length; ++j)
+      {
+         s = a.childNodes[j];
+         //alert("s:" + s.tagName +"\ns:" + (s.tagName + "").toLowerCase());
+         if((s.tagName + "").toLowerCase() == "source")
+         {
+            n = s.getAttribute("src");
+            e = document.createElement("div");
+            e.setAttribute("class", "cssAudio");
+            e.setAttribute("align", "center");
+            e.innerHTML = "<div>" + n.replace(/^..\/music/, "") + " <button onclick=\"stopAllAudio()\">Stop All</button></div>";
+            a.parentNode.insertBefore(e, a);
+            e.appendChild(a);
+         }
+      }
+   }
+}
+
+function stopAllAudio()
+{
+   var aa = document.getElementsByTagName("audio");
+   //alert("aa:" + aa.length);
+   var a, s, n, e, i, j;
+   for (i = 0; i < aa.length; ++i)
+   {
+      a = aa[i];
+      a.pause();
+      a.currentTime = 0;
+   }
+}
+</script>
 </head>
-<body>
+<body onload="completeAudio()">
 
 <h1 class="cssSubtitle">Mass Effect: Black Ops</h1>
 <h1>Module 00.01 - Akuze</h1>
@@ -69,6 +118,13 @@
 <h3>Le SSV Kadesh</h3>
 
 <p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect - Unreleased/Mass Effect - Unreleased - 02 - Normandy Iconic Tune.ogg" type="audio/ogg" />
+   </audio>
+</p>
+
+
+<p>
    Le SSV Kadesh est une frégate de l'Alliance de class Alamo&#160;:
 </p>
 
@@ -119,7 +175,8 @@
             <ul>
                <li><u>Leader&#160;:</u> 2<sup>nd</sup> Lieutenant Alessa Shirow (♀)</li>
                <li><u>Second&#160;:</u> Sous-lieutenant Akhiles Lophos (♂)</li>
-               <li><u>Marine&#160;:</u> Chef de Service Khany D'Naeva (♂)</li>
+               <li><u>Marine&#160;:</u> Sous-lieutenant Tanja Jensen (♀)</li>
+               <li><u>Marine&#160;:</u> Chef de Service Yanae T'Kali (♀)</li>
                <li><u>Marine&#160;:</u> Chef de Service Thulgar Dar (♂)</li>
             </ul>
          </li>
@@ -174,6 +231,12 @@
 
 
 <h3>Le système Ogami</h3>
+
+<p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect/25 - Uncharted Worlds.ogg" type="audio/ogg" />
+   </audio>
+</p>
 
 <p>
    Le système Ogami est situé dans la
@@ -430,9 +493,11 @@
       un monument blindé dont les canons aux repos sont protégés par un dome.
    </p>
    <p>
-      Le dernier angle mène à grand entrepôt de 200m x 100m, dont chacune des
-      deux extrémités porte deux tour. Si la tour nord est une tour GARDIAN, la
-      tour sud est une tour de contrôle portant, elle aussi, un système GARDIAN.
+      Le dernier angle mène à l'astrogare, un grand bâtiment de 200m x 100m, en
+      forme d'hexagone allongé, dont chacune des deux extrémités porte deux
+      tour. Si la tour nord est une tour GARDIAN ronde, la tour sud est une
+      tour de contrôle de forme hexagonale, portant, elle aussi, un système
+      GARDIAN.
    </p>
    <p>
       A l'est de cet entrepôt émerge les rails d'un tram, menant au complexe
@@ -473,6 +538,155 @@
       </td>
    </tr>
 </table>
+
+<h5>L'astrogare</h5>
+
+<p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect - Unreleased/Mass Effect - Unreleased - 39 - Peak 15.ogg" type="audio/ogg" />
+   </audio>
+</p>
+
+<p>
+   A l'arrivée des PJs, l'astrogare est silencieux, et toutes les lampes sont
+   éteintes, sauf des lampes d'urgences fluorescentes. Il faut donc forcer
+   l'ouverture des sas à la main, en alimentant chaque sas avec des 2 cellules
+   d'énergie&#160;:
+</p>
+
+<center>
+   <table class="cssTable">
+      <tr><th colspan="2">Ouvrir des sas</th></tr>
+      <tr><th colspan="2">Intelligence + Bricolage</th></tr>
+      <tr><th>Succès</th>                 <th>Effet</th></tr>
+      <tr><td>Echec critique</td>         <td>Le sas est bloqué</td></tr>
+      <tr><td>Echec</td>                  <td>Le sas s'ouvre des deux côtés, provoquant la dépressurisation de l'intérieur</td></tr>
+      <tr><td>Réussite</td>               <td>Le sas s'ouvre correctement, et reste actif pendant 1 heure (sauf si alimenté)</td></tr>
+      <tr><td>Réussite Exceptionnelle</td><td>Non seulement le sas s'ouvre, mais une seule cellule est dépensée</td></tr>
+   </table>
+</center>
+
+<p>
+   L'astrogare est divisé en 3 parties&#160;:
+</p>
+
+<div class="cssDescription">
+   <h1>Les Entrepôts</h1>
+   <p>
+      Situé dans la partie nord, ce sont d'énormes salles contenant séparées
+      par des grand sas. On peut y trouver des caisses de ressources, aussi
+      bien technologiques que du ravitaillement (de la nourriture, et des
+      médicaments).
+   </p>
+</div>
+
+<p>
+   Il n'y a pas grande chose à par les caisses. Les terminaux sont inactifs
+   (pas de réseau).
+</p>
+<p>
+   On peut fouiller les caisses, mais la plupart contiennent des équipements
+   inutiles (meubles à monter, etc.). Avec un jet de recherche réussi, on peut
+   trouver ce qu'on veut. La seule difficulté étant le temps&#160;:
+</p>
+
+<center>
+   <table class="cssTable">
+      <tr><th colspan="2">Rechercher de l'équipement</th></tr>
+      <tr><th colspan="2">Intelligence + Investigation</th></tr>
+      <tr><th>Succès</th>                 <th>Effet</th></tr>
+      <tr><td>Echec critique</td>         <td>...</td></tr>
+      <tr><td>Echec</td>                  <td>...</td></tr>
+      <tr><td>Réussite</td>               <td>...</td></tr>
+      <tr><td>Réussite Exceptionnelle</td><td>...</td></tr>
+   </table>
+</center>
+
+
+<p>
+   On peut trouver de l'équipement médical et des des
+   médicaments en quantité, de la nourriture dans des boîtes scellées, de
+   l'eau. On peut aussi trouver des composants électroniques de rechange.
+</p>
+<p>
+
+</p>
+
+
+
+<div class="cssDescription">
+   <h1>La gare</h1>
+   <p>
+   </p>
+   <p>
+   </p>
+   <p>
+      Une fois passé le sas d'entrée, le hall de l'astroport est assez
+      impressionnant&#160;: Une salle en forme d'hexagone de 50m de diamètre,
+      dont les angles ouest et est mènent respectivement à la zone
+      d'atterrissage et à la gare du tram. La face nord mène à des entrepôts,
+      et la face sud à une zone administrative, avec la tour de contrôle.
+   </p>
+   <p>
+      
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+</div>
+
+
+
+
+<ul>
+   <li>
+      <b>Les Entrepôts&#160;:</b> Situé dans la partie nord, ce sont d'énormes
+      salles contenant des caisses de ressources, aussi bien technologiques que
+      de la nourriture, et des médicaments.
+   </li>
+   <li>
+      <b>La Gare&#160;:</b> Située au centre, c'est une salle hexagonale,
+      allongée d'est en ouest, avec en son centre des quais, des rails et des
+      passerelles. Un train y est situé, à l'arrêt.
+   </li>
+   <li>
+      <b>La Tour de Contrôle&#160;:</b> Située au sud, c'est une structure
+      hexagonale enchassée dans l'astrogare, contenant des bâtiments
+      administratifs.
+   </li>
+</ul>
+
+<p>
+</p>
+
+<div class="cssDescription">
+   <h1>Le Hall de Gare</h1>
+   <p>
+      Une fois passé le sas d'entrée, le hall de l'astroport est assez
+      impressionnant&#160;: Une salle en forme d'hexagone de 50m de diamètre,
+      dont les angles ouest et est mènent respectivement à la zone
+      d'atterrissage et à la gare du tram. La face nord mène à des entrepôts,
+      et la face sud à une zone administrative, avec la tour de contrôle.
+   </p>
+   <p>
+      
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+   <p>
+   </p>
+</div>
+
+
 
 <h5>Le MSV Rombus</h5>
 
@@ -820,6 +1034,12 @@
 <h2>Synopsis</h2>
 
 <p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect/25 - Uncharted Worlds.ogg" type="audio/ogg" />
+   </audio>
+</p>
+
+<p>
    Le scenario est divisé une courte introduction, située sur le SSV Kadesh,
    où le groupe a l'occasion de réaliser qu'il n'est <i>réellement pas</i> le
    bienvenu à bord&#160;; puis du scénario lui-même, qui consiste à comprendre
@@ -851,93 +1071,376 @@
 <p>
 </p>
 
-<h4>Scène&#160;: Briefing</h4>
+<h4>Rappel</h4>
 
-<div class="cssBrainstorming">
-   <p>
-      Le briefing ne concerne que le leader de l'escouade. Le reste n'est pas
-      là.
-   </p>
-   <p>
-      En gros, le capitaine du Kadesh, son XO et les chefs d'escouades sont là
-      pour le briefing&#160;:
-   </p>
-   <p>
-      Ogami-e S5 a cessé toute communications, et le Kadesh a été envoyé pour
-      enquêter. En plus des paramètres de la mission il est clair que les
-      escouades Alpha et Omega auront chacune le gros du travail, et que Kimera
-      restera en retrait.
-   </p>
-   <p>
-      Si le leader de Kimera ne proteste pas, le meeting s'arrêtera là.
-   </p>
-   <p>
-      Si le leader proteste que son escouade restera en arrière, malgré les
-      recommandations de Hackett de traiter l'escouade à égalité, on lui
-      répliquera qu'il faut un "temps d'adaptation". Bien que les arguments
-      sonnent "vrais", c'est clairement du Bullshit.
-   </p>
-   <p>
-      Prévoir la scène post-, où le leader de Kimera explique à son escouade la
-      situation.
-   </p>
-</div>
+<p>
+   <audio controls="controls">
+      <source src="../music/Mass Effect/01 - Mass Effect Theme.ogg" type="audio/ogg" />
+   </audio>
+</p>
 
 <p>
 </p>
 <p>
 </p>
 
-<h4>Entre-temps&#160;:</h4>
-
-<div class="cssBrainstorming">
+<div class="cssDescription">
    <p>
-      Le SSV Kadesh est une frégate typique, où la présence d'une escouade
-      supplémentaire se fait sentir, chamboulant les quarts et les emplois du
-      temps. Sans compter le fait que cette escouade abrite deux aliens. L'asari
-      fait tâche à cause de la promiscuité dont sont censées faire preuve les
-      membres de cette race. Et le krogan n'aide certainement pas à l'intégration.
+      Elysium aurait dû être une débâcle, qui aurait marqué l'Alliance durant
+      les décades à venir.
    </p>
    <p>
-      Durant tout le voyage, les PJs vont devoir faire un jet d'intégration
-      (Présence + Socialisation), qui est un jet social modifié par la compétence
-      Xeno (Empathie) envers les humains.
+      Heureusement, malgré la surprise, et malgré la traîtrise, grâce aux
+      courage et à la valeur de sa population, et en particulier, d'un groupe
+      de héros, la colonie a tenu le siège, jusqu'à l'arrivée de la Seconde
+      Flotte.
+   </p>
+   <p>
+      Il y a eu des victimes. Il y a eu des disparu.
+   </p>
+   <p>
+      Mais ce jour-là a marqué l'Alliance, et signalé à toute la galaxie que
+      l'Humanité ne se laisserait plus faire.
+   </p>
+   <p>
+      Loin des discours et des actes diplomatiques, le Projet Kimera, projet
+      expérimental sous l'égide de Steven Hackett, de la toute nouvelle
+      Cinquième Flotte, a été mis en route.
+   </p>
+   <p>
+      Cinq des héros de Elysium ont été considéré pour la première escouade
+      inter-espèces de l'Alliance&#160;:
    </p>
    <ul>
       <li>
-         <b>Critique&#160;:</b> Le PJ commet une bourde <i>monumentale</i> et
-         se fait rappeler à l'ordre par le capitaine, qui le notera dans son
-         journal de bord. Tous les jets sociaux futurs avec des membres du
-         Kadesh se font avec un malus supplémentaire de -3.
+         <b>2<sup>nd</sup> Lieutenant Alessa Shirow (♀):</b><br />
+         Récemment admise dans les forces spéciales, de rank N1, cette tireuse
+         d'élite s'est faite remarquer par son sang froid, et ses capacités
+         de commandement, secondant avec brio le commandant Shepard durant le
+         Blitz.
       </li>
       <li>
-         <b>Echec&#160;:</b> Le PJ n'arrive pas à s'intégrer. L'équipage l'évite
-         poliment.
+         <b>Sous-lieutenant Akhiles Lophos (♂):</b><br />
+         Ingénieur émérite, ce génie du piratage a appuyé les Héros de Shepard
+         de ses compétences informatiques, ainsi que de ses capacités à infliger
+         des dégâts technologiques à l'ennemi.
       </li>
       <li>
-         <b>Réussite&#160;:</b> Le PJ arrive à s'intégrer. Aucun effet notable.
+         <b>Sous-lieutenant Tanja Jensen (♀):</b><br />
+         Bien qu'elle ne soit pas une marine de l'Alliance, et qu'elle ait
+         jusque-là suivi une formation pour rejoindre l'A.I.S., les services
+         d'informations de l'Alliance, ses capacités biotiques exceptionnelles,
+         (immortalisées par la fameuse vid "Combat Biotique en Bikini lors du
+         Blitz", de Emily Wong), ont été d'un grand secours lors du Blitz,
+         motivant l'Amiral Hackett à insister pour qu'elle rejoigne Kimera.
       </li>
       <li>
-         <b>Réussite Exceptionnelle&#160;:</b> Le PJ arrive à s'attirer les
-         faveurs de l'équipage. Si un alien arrive à ce résultat, le capitaine
-         sera obligé de le noter dans son journal de bord. Tous les jets sociaux
-         futurs avec des membres du Kadesh se font avec un bonus supplémentaire
-         de +3.
+         <b>Chef de Service Yanae T'Kali (♀):</b><br />
+         Cette chasseresse asari a tracé sa route à travers des escouades de
+         pirates et d'esclavagiste, laissant derrière elle des cadavres brisés
+         ou découpés, déstabilisant l'ennemi jusqu'à ce que son chemin croise
+         celui du commandant Shepard, qu'elle rejoignit dans sa mission de
+         reprendre le contrôle du système GARDIAN.
+      </li>
+      <li>
+         <b>Chef de Service Thulgar Dar (♂):</b><br />
+         Les témoignages issus d'Elysium ont tous mis en valeur les actes de
+         bravoure de ce krogan, qui n'hésita pas à foncer sur des escouades
+         entières pour protéger des civils, avant de rejoindre l'escouade du
+         commandant Shepard lors de la reprise du Bunker de la Base de Vidom.
       </li>
    </ul>
    <p>
-      Le sentiment d'isolation, s'il est confirmé par le jet (absence de
-      réussite) serait particulièrement grave pour l'asari, qui voit sa volonté
-      diminuée de 1 afin de simuler la déprime associée avec cette isolation.
+      Après un entraînement poussé sur la Station Zenith, l'escouade Kimera,
+      sous le commandement du lieutenant Shirow, doit rejoindre sa première
+      affectation, la frégate SSV Kadesh, ayant récemment rejoint la Cinquième
+      Flotte...
+   </p>
+   <p>
+      Mais tous ne sont pas convaincus par le Projet Kimera&#160;: Les autres
+      races galactiques ont déjà tenté, et échouer à former des escouades
+      pérennes. Et puis les humains se méfient toujours des <i>aliens</i>, y
+      compris de ceux qu'ils considèrent officiellement comme des alliés. Enfin,
+      la politique n'est jamais loin, et certains apprécient peu l'ascension
+      de l'Amiral Hackett...
+   </p>
+</div>
+
+
+
+<h4>Scène&#160;: Briefing</h4>
+
+<p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect - Unreleased/Mass Effect - Unreleased - 03 - Normandy Debrieffing.ogg" type="audio/ogg" />
+   </audio>
+</p>
+
+<p>
+   Les personnes suivantes sont présente lors du briefing&#160;:
+</p>
+
+<ul>
+   <li>
+      Officier Commandant (CO) : Capitaine Jane Mulligan (♀)
+   </li>
+   <li>
+      Officier Exécutif (XO) : Lieutenant-Commandant Karl Haskins (♂)
+   </li>
+   <li>
+      Pilote : 2nd Lieutenant André Millson (♂)
+   </li>
+   <li>
+      Médecin-Chef : 1er Lieutenant Lucia Amano (♀)
+   </li>
+   <li>
+      Leader (Alpha) : 1er Lieutenant Boris Garibaldi (♂)
+   </li>
+   <li>
+      Leader (Kimera) : 2nd Lieutenant Alessa Shirow (♀)
+   </li>
+</ul>
+
+
+<div class="cssDescription">
+   <p>
+      La salle de briefing du Kadesh est sombre, au murs gris, et à l'éclairage
+      limité. C'est un petit amphithéâtre pouvant accueillir confortablement une
+      douzaine de personnes.
+   </p>
+   <p>
+      Debout, en bas, se trouve le commandant <b>Karl Haskins</b>, officier exécutif
+      du Kadesh. Brun, grands, et à la posture rigide, il attend que tous le
+      monde se soit installé pour continuer.
+   </p>
+   <p>
+      A ses côté, assise, le capitaine <b>Jane Mulligan</b>, qui observe le déroulement
+      du briefing, et ses participants, avec intérêt.
+   </p>
+   <p>
+      Assis au premier rang se trouvent aussi le lieutenant André <b>Millson</b>,
+      premier pilote du Kadesh, et le lieutenant <b>Lucia Amano</b>, médecin chef, et
+      enfin le lieutenant <b>Boris Garibaldi</b>, chef de l'escouade Alpha.
+   </p>
+   <p>
+      L'impression donnée est que le briefing avait déjà commencé...
+   </p>
+   <p>
+      "Nos communications avec la colonie industrielle <b>Ogami-e S5</b>
+      semblent coupées. Notre mission&#160;: Découvrir s'il s'agit d'une simple
+      panne, ou si quelque chose de plus grave est arrivé."
+   </p>
+   <p>
+      "Bien que le Blitz ait été une victoire éclatante dans les médias, nous
+      devons nous rappeler que notre situation est fragile. Nos colonies sont
+      les cibles régulières d'attaques. Si c'est ce qu'il s'est passé sur Ogami,
+      vos ordres sont clairs&#160;:"
+   </p>
+   <p>
+      "L'infirmerie doit se préparer à accueillir les survivants. Le hangar
+      sera mis à disposition pour accueillir autant de monde que possible."
+   </p>
+   <p>
+      "Notre approche devra être discrète, et nous devrons nous tenir à l'affut
+      d'une éventuellement embuscade par des retardataires."
+   </p>
+   <p>
+      "Enfin, l'Escouade Alpha sera chargée d'investir et de sécuriser
+      l'astroport, afin, si besoin, de servir de base arrière si nous devions
+      nous retrouver en zone hostile."
+   </p>
+   <p>
+      "Des questions&#160;?"
    </p>
 </div>
 
 <p>
+   Il est clair que l'Escouade Kimera n'a pas sa place dans cette mission. La
+   première réponse du XO sera que Kimera restera à bord le temps que la
+   situation soit plus claire, mais il est évident pour lui (Jet d'Empathie),
+   qu'il ne compte pas se servir de Kimera.
 </p>
 <p>
+   Si le leader de Kimera ne proteste pas, le meeting s'arrêtera là.
+</p>
+<p>
+   Si le leader proteste que son escouade restera en arrière, malgré les
+   recommandations de Hackett de traiter l'escouade à égalité, on lui
+   répliquera qu'il faut un "temps d'adaptation". Bien que les arguments
+   sonnent "vrais", c'est clairement du Bullshit.
+</p>
+<p>
+   A ce moment-là, avant que le leader ne puisse insister, la scène de
+   briefing est interrompue par les scènes de <i>Flashbacks</i>.
+</p>
+<p>
+   Prévoir la scène post-, où le leader de Kimera expliquera à son escouade
+   la situation.
 </p>
 
-<h4>xxx</h4>
+
+<h4>Flashbacks&#160;:</h4>
+
+<p>
+   Ces scènes de Flashbacks sont le moment où les membres de Kimera pourraient
+   avoir eu un comportement qui va soit rendre plus facile, soit rendre plus
+   difficile, l'argumentation du lieutenant Shirow.
+</p>
+<p>
+   Chaque membre de Kimera devra décider de comment il/elle a passé la soirée
+   de la veille, parmi les suivantes&#160;:
+</p>
+
+<ul>
+   <li>
+      <b>Le NightSpace (nightclub)&#160;:</b><br />
+      <div>
+         <audio controls="controls" loop="loop">
+            <source src="../music/Mass Effect Cinematic Music/nightclub - Afterlife.mp3" type="audio/mp3" />
+         </audio>
+      </div>
+      Etant un lieu de détente, la discipline y est plus relâchée. Toutefois, il
+      faut être capable de savoir se tenir un minimum. L'alcool n'aide pas
+      forcément (rajouter une difficulté de -3 au jet) Les problèmes pourraient
+      être&#160;:
+      <ul>
+         <li>
+            Bagarre&#160;: Le ton monte entre deux groupe, et si le jet échoue,
+            une bagarre se déclenche.
+         </li>
+         <li>
+            Partie de cartes&#160;: La partie elle-même n'a pas d'enjeux. Mais
+            comment on se comporte risque d'être retenu pour plus tard.
+         </li>
+         <li>
+            Discussion&#160;: La discussion elle-même n'a pas d'enjeux. Mais
+            comment on se comporte risque d'être retenu pour plus tard. En
+            particulier, si une tentative de séduction est effectuée (par
+            l'asari, par exemple), on pourra reprocher la fraternisation.
+         </li>
+      </ul>
+   </li>
+   <li>
+      <b>Ses quartiers&#160;:</b><br />
+      Le personnage devra tirer un jet social, mais sans critique ni succès
+      exceptionel possible.
+   </li>
+   <li>
+      <b>La salle d'entraînement&#160;:</b><br />
+      Contrairement au nightclub, il n'y a pas d'alcool. La bagarre a le plus de
+      chance d'arriver, alors qu'il n'y a pas de partie de cartes. La discussion
+      peut arriver.
+   </li>
+   <li>
+      <b>La grande baie&#160;:</b><br />
+      <div>
+         <audio controls="controls" loop="loop">
+            <source src="../music/Mass Effect Cinematic Music/ambient - The Citadel.mp3" type="audio/mp3" />
+         </audio>
+      </div>
+      Contrairement au nightclub, il n'y a pas d'alcool. Mais la bagarre et/ou
+      la discussion peut arriver.
+   </li>
+</ul>
+
+<p>
+   Chaque lieu a un événement lié, qui mettra à l'épreuve les compétences
+   sociales des personnages qui s'y trouvent.
+</p>
+<p>
+   Chaque personnage va devoir faire un jet d'intégration (Présence +
+   Socialisation), qui est un jet social modifié par la compétence
+   Xeno (Empathie) envers les humains. Si de l'alcool est bu, alors le jet se
+   fait avec un malus de -3.
+</p>
+<ul>
+   <li>
+      <b>Critique&#160;:</b> Le PJ commet une bourde <i>monumentale</i> et
+      se fera personnellement rappeler à l'ordre par le capitaine, qui le
+      notera dans son journal de bord. Tous les jets sociaux futurs avec des
+      membres du Kadesh se font avec un malus supplémentaire de -3.
+   </li>
+   <li>
+      <b>Echec&#160;:</b> Le PJ n'arrive pas à s'intégrer. L'équipage l'évite
+      poliment.
+   </li>
+   <li>
+      <b>Réussite&#160;:</b> Le PJ arrive à s'intégrer. Aucun effet notable.
+   </li>
+   <li>
+      <b>Réussite Exceptionnelle&#160;:</b> Le PJ arrive à s'attirer les
+      faveurs de l'équipage. Si un alien arrive à ce résultat, le capitaine
+      sera obligé de le noter dans son journal de bord. Tous les jets sociaux
+      futurs avec des membres du Kadesh se font avec un bonus supplémentaire
+      de +3.
+   </li>
+</ul>
+<p>
+   Il est important de retenir les échecs et les réussites de chacun, puisque
+   cela interviendra lors du retour au briefing.
+</p>
+
+<h4>Fin du briefing (optionnel)</h4>
+
+<p>
+   Cette scène ne continue que si le leader insiste pour que Kimera ait sa
+   place dans la mission.
+</p>
+<p>
+   Là, le leader a l'occasion de tenter d'impressionner le capitaine du
+   Kadesh, et les autres officiers présents, via&#160;:
+</p>
+<ul>
+   <li>
+      un jet d'expression.
+   </li>
+   <li>
+      un jet de commandement (malus -1)
+   </li>
+   <li>
+      un jet de d'intimidation (malus -2).
+   </li>
+</ul>
+<p>
+   Ce jet est en plus modifié par l'amplitude du succès de son escouade à
+   s'intégrer: Chaque réussite rajoute un bonus de 1, chaque réussite
+   exceptionnelle rajoute un bonus de 2. Chaque critique rajoute un malus de
+   -2.
+</p>
+<ul>
+   <li>
+      Chaque réussite exceptionelle&#160;: Bonus de 2
+   </li>
+   <li>
+      Chaque réussite&#160;: Bonus de 1
+   </li>
+   <li>
+      Chaque échec&#160;: Malus de -1
+   </li>
+   <li>
+      Chaque échec critique&#160;: Malus de -2
+   </li>
+</ul>
+<p>
+   Si le jet réussit, alors le leader est si convaincant que le capitaine
+   lui propose alors de faire ses preuves en servant d'éclaireur pour la
+   mission, et d'être les premiers à se poser sur Ogami-e S5.
+</p>
+<p>
+   Si le jet est une réussite exceptionnelle et que let jet étant soit
+   d'expression, soit commandement, alors les qualité du leader seront
+   notées dans le journal (et récupérées plus tard par l'Alliance).
+</p>
+<p>
+   Si le jet échoue, ça se termine par un "Votre objection a été notée. Vous
+   pouvez disposer." Si c'était en plus un jet d'intimidation, un échec est
+   considéré comme critique (ci-dessous).
+</p>
+<p>
+   Si le jet est critique, le leader arrive à se décrédibiliser. Ca sera noté
+   dans le journal de bord, et les jets sociaux ultérieurs avec les officiers
+   auront un malus de -2.
+</p>
 
 <p>
 </p>
@@ -949,21 +1452,12 @@
 
 
 <p>
-   La description suivante est à lire lorsque les personnages posent pour la
-   première fois le pied sur Ogami-e S5:
 </p>
 
 <div class="cssDescription">
    <p>
-      A chaque fois que vous posez le pied sur un astre inconnu, vous ne pouvez vous
-      empêcher de réaliser à quel point vous êtes minuscules devant la magnitude
-      de la galaxie.
    </p>
    <p>
-      Il fait nuit sur Ogami-e S5, et il est impossible d'ignorer, au beau milieu
-      du ciel étoilé, la masse de la géante bleue Ogami-e, qui vous écrase
-      littéralement de sa présence, occupant un portion impressionnante du ciel
-      de cette petite lune glacée.
    </p>
 </div>
 
@@ -971,56 +1465,12 @@
 
 <div class="cssDescription">
    <p>
-      L'astroport est une construction standard, un terrain plat de goudron, de
-      forme hexagonale propice à l'extension, d'un diamètre de 600m. A
-      chaque angle de l'hexagone, sauf un, à l'est, se trouve une tour GARDIAN,
-      un monument blindé dont les canons aux repos sont protégés par un dome.
    </p>
    <p>
-      Le dernier angle mène à grand entrepôt de 200m x 100m, dont chacune des
-      deux extrémités porte deux tour. Si la tour nord est une tour GARDIAN, la
-      tour sud est une tour de contrôle portant, elle aussi, un système GARDIAN.
    </p>
    <p>
-      A l'est de cet entrepôt émerge les rails d'un tram, menant au complexe
-      principal de la colonie.
    </p>
 </div>
-
-<table>
-   <tr>
-      <td width="50%">
-         <p>
-            Si le Kadesh est posé&#160;:
-         </p>
-      </td>
-      <td width="50%">
-         <p>
-            Si le Kadesh n'est pas posé&#160;:
-         </p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <div class="cssDescription">
-            <p>
-               L'astroport est vide, sinon la présence du SSV Kadesh, ainsi que
-               les restes d'un vaisseau de transport de marchandises civiles de
-               classe Kowloon.
-            </p>
-         </div>
-      </td>
-      <td>
-         <div class="cssDescription">
-            <p>
-               L'astroport est vide, sinon  les restes d'un vaisseau de
-               transport de marchandises civiles de classe Kowloon.
-            </p>
-         </div>
-      </td>
-   </tr>
-</table>
-
 
 <p>
 </p>
@@ -1076,6 +1526,14 @@
 <p>
 </p>
 
+
+<h4>FIN</h4>
+
+<p>
+   <audio controls="controls" loop="loop">
+      <source src="../music/Mass Effect/37 - M4 Part II (Faunts).ogg" type="audio/ogg" />
+   </audio>
+</p>
 
 
 

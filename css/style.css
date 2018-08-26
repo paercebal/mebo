@@ -172,6 +172,14 @@ div.cssWarning, div.cssInformation, div.cssDescription, div.cssBrainstorming
    border            : 1px solid #000000;
 }
 
+div.cssWarning h1, div.cssInformation h1, div.cssDescription h1, div.cssBrainstorming h1
+{
+   text-align  : left;
+   font-size : 100%;
+   margin : .75em 2em;
+}
+
+
 div.cssWarning
 {
    border-color      : #FF0000;
@@ -196,28 +204,28 @@ div.cssBrainstorming
    background        : #FFEECC;
 }
 
-div.cssWarning p:first-child:before
+div.cssWarning p:first-child:before, div.cssWarning h1:first-child:before
 {
    color             : #FF0000;
    font-weight       : bold;
    content           : "Attention: ";
 }
 
-div.cssInformation p:first-child:before
+div.cssInformation p:first-child:before, div.cssInformation h1:first-child:before
 {
    color             : #008800;
    font-weight       : bold;
    content           : "Information: ";
 }
 
-div.cssDescription p:first-child:before
+div.cssDescription p:first-child:before, div.cssDescription h1:first-child:before
 {
    color             : #0066AA;
    font-weight       : bold;
    content           : "Description: ";
 }
 
-div.cssBrainstorming p:first-child:before
+div.cssBrainstorming p:first-child:before, div.cssBrainstorming h1:first-child:before
 {
    color             : #AA6600;
    font-weight       : bold;
